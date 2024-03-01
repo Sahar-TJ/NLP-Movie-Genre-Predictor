@@ -22,6 +22,8 @@ __Run the Search file__
 
 Check the outputs.json for the similar show outputs. 
 
+### Dataset
+The data is extracted from "https://www.tvmaze.com". However, the dataset used here can be found on Kaggle "https://www.kaggle.com/datasets/sahartj/tv-maze-dataset" or is present in the zip file.
 
 ## Files
 
