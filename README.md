@@ -1,5 +1,12 @@
-# GenreSmart: AI-Powered Movie Classifier and Recommender
+# ReelReveal: AI-Powered Genre Prediction and Movie Search Engine
 
+ReelReveal is an innovative AI-powered platform designed to revolutionize the way we explore and interact with movies. Leveraging advanced machine learning techniques, ReelReveal offers two distinct functionalities: genre prediction and movie search.
+
+- __Genre Prediction:__
+By analyzing the textual descriptions of movies, ReelReveal employs state-of-the-art natural language processing (NLP) algorithms to predict the genres of films accurately. Whether it's drama, comedy, action, or a combination of genres, ReelReveal provides users with insightful genre predictions, enabling them to explore movies tailored to their preferences.
+
+- __Movie Search:__
+Powered by a sophisticated indexing system, ReelReveal allows users to search for movies based on specific criteria, such as keywords, themes, or plot summaries. By efficiently indexing vast repositories of movie data, ReelReveal enables users to discover hidden gems and explore a diverse range of cinematic experiences.
 
 ### Steps to run the files:
 
