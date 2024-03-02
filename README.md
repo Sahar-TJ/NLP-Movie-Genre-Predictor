@@ -30,16 +30,16 @@ __Run the Search file__
 Check the outputs.json for the similar show outputs. 
 
 ### Dataset
-The data is extracted from "https://www.tvmaze.com". However, the dataset used here can be found on Kaggle "https://www.kaggle.com/datasets/sahartj/tv-maze-dataset" or is present in the zip file.
+The data is extracted from [TV Maze](https://www.tvmaze.com). However, the dataset used here can be found on [Kaggle](https://www.kaggle.com/datasets/sahartj/tv-maze-dataset) or is also present in the [zip file](https://github.com/Sahar-TJ/NLP-Movie-Genre-Predictor/blob/main/tvmaze_sql.zip).
 
 ## Files
 
 ### train.py
 The codet is designed to train a neural network model using TV show descriptions and their associated genres. It involves several key steps:
 
-- __Data Loading:__ The script begins by establishing a connection to an SQLite database to fetch data from tables containing TV show descriptions and genres.
+- __Data Loading:__ The program begins by establishing a connection to an SQLite database to fetch data from tables containing TV show descriptions and genres.
 - __Data Cleaning and Preprocessing:__ It applies text preprocessing techniques to clean the descriptions, including removing stopwords, HTML tags, URLs, and lemmatizing the text to reduce words to their base forms.
-- __Data Preparation:__ The script prepares the target variable by one-hot encoding the genres and splits the data into training and validation sets.
+- __Data Preparation:__ The code prepares the target variable by one-hot encoding the genres and splits the data into training and validation sets.
 - __Model Training:__ A neural network model is trained using the preprocessed text data. The model architecture includes a TextVectorization layer to convert text into token vectors, an Embedding layer for word embeddings, and Dense layers for classification.
 - __Evaluation:__ The trained model is evaluated on a test set to determine its accuracy.
 - __Saving the Model:__ The final model and the mapping between genres and their respective indices in the output layer are saved for later use in predictions.
@@ -49,8 +49,8 @@ The codet is designed to train a neural network model using TV show descriptions
 The code used to classify the genre of a TV show based on its description using the previously trained model. The main activities include:
 
 - __Model Loading:__ It loads the trained model and the genre-index mapping.
-- __Data Preprocessing:__ The TV show description is cleaned and preprocessed using the same methods as in the training script.
-- __Prediction:__ The script predicts the genres of the TV show and ranks them based on their probabilities.
+- __Data Preprocessing:__ The TV show description is cleaned and preprocessed using the same methods as in the training file.
+- __Prediction:__ The code predicts the genres of the TV show and ranks them based on their probabilities.
 - __Output:__ The predicted genres and their probabilities are saved to a JSON file. Optionally, an explanation of the prediction can be generated using LIME and saved as an HTML file.
 
 
@@ -58,7 +58,7 @@ The code used to classify the genre of a TV show based on its description using 
 The code is intended to index TV show data for efficient retrieval:
 
 - __Data Extraction:__ Connects to the SQLite database to fetch TV show descriptions.
-- __Preprocessing:__ Applies text preprocessing on the descriptions, similar to the training script.
+- __Preprocessing:__ Applies text preprocessing on the descriptions, similar to the training file.
 - __Indexing:__ Utilizes TF-IDF (Term Frequency-Inverse Document Frequency) to convert the preprocessed descriptions into a matrix of TF-IDF features.
 - __Saving Indexed Data:__ The indexed data, along with the TF-IDF matrix and the vectorizer, are saved to a file for future use in searching or information retrieval tasks.
 
