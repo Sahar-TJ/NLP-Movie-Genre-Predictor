@@ -1,0 +1,15 @@
+# Classifier Design
+## How the Classifier Works
+The classifier operates on the principle of converting TV show descriptions into numerical representations and using these representations to predict their associated genres.
+
+Firstly, the TV show descriptions are preprocessed: any URLs within the text are removed, extraneous white space is consolidated, and common words (stopwords) are discarded. To ensure better accuracy, tokenization and lemmatization techniques from the Natural Language Toolkit (NLTK) are applied. This means that the text is broken down into individual tokens, and then these tokens are converted to their base form, ensuring that words like "running" and "runs" are treated the same. I have done this as I wanted my model to learn well while training since cleaning is the main part of any data science project.
+
+After preprocessing, the descriptions are converted into numerical vectors using TextVectorization. These vectors are then embedded into a dense space using an Embedding layer. The embeddings are averaged using a GlobalAveragePooling1D layer, passed through a dense layer, and finally through a sigmoid activated output layer corresponding to each genre. The model is trained using the binary cross-entropy loss, given that each description can belong to multiple genres. After training the model, the accuracy was quite good, around 55%. This could have been better if the dataset was large and was balanced well. 
+
+In the classify.py we give a new TV show description stored in the text file, it processes the description and predicts the probabilities of the show belonging to each genre. This is only possible because it learnt from the model and predicted the genres. The genres with the highest probabilities are returned as the predicted genres for the TV show. I haven't appllied the threshhold because even though it predicted right, the probabilities of the right genres were less than 50%. 
+
+Reason for the Design Choice
+The primary rationale behind this design was to capture the contextual essence of TV show descriptions. By converting descriptions into numerical embeddings, the model can capture the semantic meaning behind words and phrases. This is crucial when determining genres, as often a few keywords or the context in which they're used can hint at the genre.
+Using a deep learning model with embedding allows for capturing these nuances. The use of binary cross-entropy as the loss function enables the model to handle multiple genres for a single description, a common occurrence in TV shows.
+
+Additionally, preprocessing steps like lemmatization ensure that different forms of the same word are treated uniformly, ensuring that the model is not biased by the varied usage of words. Using libraries like NLTK for preprocessing and TensorFlow for modeling ensures that the classifier is built on well-established and optimized frameworks, ensuring efficiency and robustness.
